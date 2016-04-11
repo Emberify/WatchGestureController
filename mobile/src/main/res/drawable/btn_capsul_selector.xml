@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" android:exitFadeDuration="@android:integer/config_shortAnimTime">
+
+    <item android:drawable="@color/home_btn_color" android:state_focused="true" android:state_pressed="false" />
+    <item android:state_pressed="true">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+
+            <solid android:color="@color/home_btn_color" />
+
+            <stroke android:width="2dp" android:color="@color/home_btn_color" />
+
+            <corners android:radius="25dp" />
+
+        </shape>
+    </item>
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+
+            <solid android:color="@color/home_btn_drak_color" />
+
+            <stroke android:width="2dp" android:color="@color/home_btn_drak_color" />
+
+            <corners android:radius="25dp" />
+
+        </shape>
+    </item>
+</selector>

@@ -1,0 +1,4 @@
+configurations.create("default")
+artifacts.add("default", file('common.aar'))
+dependencies {
+}

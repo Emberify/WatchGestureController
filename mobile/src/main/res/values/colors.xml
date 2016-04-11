@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#47359f</color>
+    <color name="colorPrimaryDark">#47359f</color>
+    <color name="colorAccent">#47359f</color>
+    <color name="game_board_color">#47359f</color>
+    <color name="white_color">#FFFFFF</color>
+    <color name="gray">#212121</color>
+    <color name="home_btn_color">#51F4A2</color>
+    <color name="home_btn_drak_color">#51F6C2</color>
+    <color name="btn_txt_color">#47359f</color>
+    <color name="button_pressed">#2B205F</color>
+
+</resources>

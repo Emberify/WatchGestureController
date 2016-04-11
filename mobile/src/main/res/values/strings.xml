@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Watch Gesture Controller</string>
+    <!--Activity tiltle-->
+
+    <!--Home activity-->
+    <string name="space_gesture_game">Space Gesture Game</string>
+    <string name="vr_gesture">VR Gesture</string>
+    <string name="help">Help</string>
+    <string name="txt_connect_your_wear">Run the Android Wear app to connect</string>
+    <string name="txt_connected_your_wear">Connected to your Android Wear</string>
+    <string name="txt_onboarding">Keep your smartwatch arm perpendicular to your body and move it up/down or twist it for the desired movement. The smartwatch app will guide you through the gestures you need.</string>
+    <string name="btn_get_started">Let\'s Get Started</string>
+    <string name="android_experiments">Android Experiment by Emberify</string>
+    <string name="dialog_restart_game">Restart</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_score">Score</string>
+</resources>
