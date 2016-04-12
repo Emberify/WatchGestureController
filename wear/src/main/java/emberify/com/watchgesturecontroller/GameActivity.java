@@ -10,6 +10,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.wearable.activity.WearableActivity;
+import android.support.wearable.view.WatchViewStub;
+import android.support.wearable.view.WearableListView;
 import android.util.Log;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -53,12 +55,23 @@ public class GameActivity extends WearableActivity implements SensorEventListene
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        txtUp = (TextView) findViewById(R.id.txt_up);
-        txtDown = (TextView) findViewById(R.id.txt_down);
-        txtLeft = (TextView) findViewById(R.id.txt_left);
-        txtRight = (TextView) findViewById(R.id.txt_right);
+        WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_game_stub);
+        stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
+            @Override
+            public void onLayoutInflated(WatchViewStub stub) {
+                txtUp = (TextView) stub.findViewById(R.id.txt_up);
+                txtDown = (TextView) stub.findViewById(R.id.txt_down);
+                txtLeft = (TextView) stub.findViewById(R.id.txt_left);
+                txtRight = (TextView) stub.findViewById(R.id.txt_right);
 
-        changeMovementState(0);
+                changeMovementState(0);
+
+                txtUp.setRotation(90);
+                txtDown.setRotation(90);
+                txtLeft.setRotation(90);
+                txtRight.setRotation(90);
+            }
+        });
 
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -68,11 +81,6 @@ public class GameActivity extends WearableActivity implements SensorEventListene
                 .addOnConnectionFailedListener(this)
                 .addApi(Wearable.API)
                 .build();
-
-        txtUp.setRotation(90);
-        txtDown.setRotation(90);
-        txtLeft.setRotation(90);
-        txtRight.setRotation(90);
     }
 
     private void changeMovementState(int no) {

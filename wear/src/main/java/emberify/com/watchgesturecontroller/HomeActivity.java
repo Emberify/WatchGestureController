@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
+import android.support.wearable.view.WatchViewStub;
 import android.util.Log;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -29,7 +31,15 @@ public class HomeActivity extends WearableActivity implements GoogleApiClient.Co
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        txtConnectApp = (TextView) findViewById(R.id.txt_connect_app);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+        WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_home_stub);
+        stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
+            @Override
+            public void onLayoutInflated(WatchViewStub stub) {
+                txtConnectApp = (TextView) findViewById(R.id.txt_connect_app);
+            }
+        });
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -46,12 +56,12 @@ public class HomeActivity extends WearableActivity implements GoogleApiClient.Co
 
     @Override
     public void onConnectionSuspended(int i) {
-
+        txtConnectApp.setText(getResources().getString(R.string.not_connected_to_app));
     }
 
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
-
+        txtConnectApp.setText(getResources().getString(R.string.not_connected_to_app));
     }
 
     @Override

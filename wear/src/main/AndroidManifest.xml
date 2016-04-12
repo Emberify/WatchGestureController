@@ -29,10 +29,13 @@
             android:name=".GameActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.DeviceDefault.Light" />
+
+
         <activity
             android:name=".CardboardActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.DeviceDefault.Light" />
+
     </application>
 
 </manifest>

@@ -9,6 +9,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.wearable.view.WatchViewStub;
 import android.util.Log;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -49,8 +50,17 @@ public class CardboardActivity extends Activity implements SensorEventListener, 
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        txtLeft = (TextView) findViewById(R.id.txt_cardboard_left);
-        txtRight = (TextView) findViewById(R.id.txt_cardboard_right);
+        WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_cardboard_stub);
+        stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
+            @Override
+            public void onLayoutInflated(WatchViewStub stub) {
+                txtLeft = (TextView) findViewById(R.id.txt_cardboard_left);
+                txtRight = (TextView) findViewById(R.id.txt_cardboard_right);
+
+                txtLeft.setRotation(90);
+                txtRight.setRotation(90);
+            }
+        });
 
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -60,9 +70,6 @@ public class CardboardActivity extends Activity implements SensorEventListener, 
                 .addOnConnectionFailedListener(this)
                 .addApi(Wearable.API)
                 .build();
-
-        txtLeft.setRotation(90);
-        txtRight.setRotation(90);
 
         long now = System.currentTimeMillis();
         mShakeTime = now;

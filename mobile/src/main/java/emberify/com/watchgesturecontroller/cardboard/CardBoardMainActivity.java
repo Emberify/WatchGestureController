@@ -77,11 +77,11 @@ public class CardBoardMainActivity extends AppCompatActivity implements GoogleAp
                     } else {
                         imagePositions--;
                     }
-                    if (imagePositions > 2) {
+                    if (imagePositions > 4) {
                         imagePositions = 0;
                     }
                     if (imagePositions < 0) {
-                        imagePositions = 2;
+                        imagePositions = 4;
                     }
                     try {
                         if (imagePositions == 0) {
@@ -93,7 +93,12 @@ public class CardBoardMainActivity extends AppCompatActivity implements GoogleAp
                         if (imagePositions == 2) {
                             istr = assetManager.open("c.jpg");
                         }
-
+                        if (imagePositions == 3) {
+                            istr = assetManager.open("d.jpg");
+                        }
+                        if (imagePositions == 4) {
+                            istr = assetManager.open("e.jpg");
+                        }
                         panoOptions = new VrPanoramaView.Options();
                         panoOptions.inputType = VrPanoramaView.Options.TYPE_MONO;
 

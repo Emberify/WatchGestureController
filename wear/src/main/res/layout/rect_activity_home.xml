@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="@dimen/layout_margin_20"
+    tools:context=".HomeActivity"
+    tools:deviceIds="wear_square">
+
+    <TextView
+        android:id="@+id/txt_connect_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white_color"
+        android:textSize="@dimen/txt_size" />
+</LinearLayout>

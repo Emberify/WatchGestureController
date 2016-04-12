@@ -1,86 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.wearable.view.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.wearable.view.WatchViewStub xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/game_container"
+    android:id="@+id/watch_view_game_stub"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    android:padding="@dimen/layout_margin_15"
+    app:rectLayout="@layout/rect_activity_game"
+    app:roundLayout="@layout/rounded_activity_game"
     tools:context=".GameActivity"
-    tools:deviceIds="wear">
-
-    <RelativeLayout
-        android:id="@+id/ll_movement_state"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="@dimen/layout_margin_5"
-        app:layout_box="all">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/txt_up"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:gravity="center"
-                android:text="@string/left"
-                android:textColor="@color/white_color"
-                android:textSize="@dimen/txt_size17" />
-
-            <TextView
-                android:id="@+id/txt_down"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:gravity="center"
-                android:paddingBottom="@dimen/layout_margin_10"
-                android:text="@string/right"
-                android:textColor="@color/white_color"
-                android:textSize="@dimen/txt_size17" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-
-            <TextView
-                android:id="@+id/txt_right"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:text="@string/Down"
-                android:textColor="@color/white_color"
-                android:textSize="@dimen/txt_size17" />
-
-            <TextView
-                android:id="@+id/txt_left"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:text="@string/up"
-                android:textColor="@color/white_color"
-                android:textSize="@dimen/txt_size17" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@mipmap/ic_pointer" />
-        </RelativeLayout>
-
-    </RelativeLayout>
-
-</android.support.wearable.view.BoxInsetLayout>
+    tools:deviceIds="wear" />
